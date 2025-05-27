@@ -12,11 +12,11 @@ var TEST_INPUT = map[string]any{
 	"customer": "Acme",
 }
 
-var f = FromFilePath(TEST_FILEPATH, TEST_NAMESPACE)
+var f, _ = FromFilePath(TEST_FILEPATH, TEST_NAMESPACE)
 
 func TestBasicInput(t *testing.T) {
 	for i := 1; i <= 100; i++ {
-		output := f.EvaluateFlags(TEST_INPUT)
+		output, _ := f.EvaluateFlags(TEST_INPUT)
 		flagWithSegment := output["flagWithSegment"].(map[string]any)
 		if !flagWithSegment["value"].(bool) {
 			t.Errorf("Failed match")
@@ -44,8 +44,8 @@ var TEST_MAP = map[string]string{
 }
 
 func TestFromMap(t *testing.T) {
-	f := FromMap(TEST_MAP, "company.flags")
-	output := f.EvaluateFlags(map[string]any{
+	f, _ := FromMap(TEST_MAP, "company.flags")
+	output, _ := f.EvaluateFlags(map[string]any{
 		"name":     "Alice",
 		"customer": "Acme",
 	})
