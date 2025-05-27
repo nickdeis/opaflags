@@ -4,6 +4,10 @@ A drop-dead simple, unopinionated file-based feature flag system using rego/opa
 
 ## Usage
 
+```
+go get github.com/nickdeis/opaflags
+```
+
 Create a directory and make a .rego file in it
 
 ```
