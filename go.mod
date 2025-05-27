@@ -1,4 +1,4 @@
-module github.com/nickdeis/regoflags
+module github.com/nickdeis/opaflags
 
 go 1.23.8
 
